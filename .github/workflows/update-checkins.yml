@@ -24,10 +24,13 @@ jobs:
       - name: Run script to update guest JSONs
         run: python scripts/generate_guest_json.py
 
-      - name: Commit and push updated JSON files
+            - name: Commit and push updated JSON files
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add data/*.json
           git commit -m "Auto-update guest JSONs" || echo "No changes to commit"
-          git push
+          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+
