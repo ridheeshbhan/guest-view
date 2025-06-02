@@ -6,7 +6,7 @@ from datetime import datetime
 from icalendar import Calendar
 
 # === Load property list CSV ===
-df = pd.read_csv("property_list.csv")
+df = pd.read_csv("ical_links.csv")
 df = df.dropna(subset=["Property", "URL"])
 
 # === Load the shared info template ===
