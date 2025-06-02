@@ -3,124 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Guest Info</title>
+  <title>ESVRM Guest View</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f2f2f2;
       margin: 0;
-      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #FFFFFF;
+      color: #2F4F4F;
+    }
+    header {
+      background-color: #1E90FF;
+      color: white;
+      padding: 1rem;
       text-align: center;
     }
-    h1 {
-      margin-bottom: 10px;
+    main {
+      padding: 2rem;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 900px;
-      margin: auto;
+    footer {
+      background-color: #D3D3D3;
+      color: #2F4F4F;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
     }
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      text-align: left;
+    .btn {
+      background-color: #1E90FF;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
-    h2 {
-      font-size: 1.2em;
-      margin-top: 0;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 8px;
-    }
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+    .btn:hover {
+      background-color: #1C86EE;
     }
   </style>
 </head>
 <body>
-  <h1 id="property-name">Loading...</h1>
-  <div class="grid">
-    <div class="box">
-      <h2>Guest Details</h2>
-      <ul>
-        <li><strong>Name:</strong> <span id="guest-name"></span></li>
-        <li><strong>Check-in:</strong> <span id="checkin"></span></li>
-        <li><strong>Check-out:</strong> <span id="checkout"></span></li>
-        <li><strong>Nights:</strong> <span id="nights"></span></li>
-      </ul>
-    </div>
-    <div class="box">
-      <h2>Home Instructions</h2>
-      <ul id="instructions"></ul>
-    </div>
-    <div class="box">
-      <h2>While You’re There</h2>
-      <ul id="while-there"></ul>
-    </div>
-    <div class="box">
-      <h2>Upon Departure</h2>
-      <ul id="departure"></ul>
-    </div>
-  </div>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const property = params.get('property')?.toLowerCase().replace(/\s+/g, '-');
-
-    function formatToList(id, text) {
-      const container = document.getElementById(id);
-      if (!text) return;
-      container.innerHTML = '';
-      text.split(/[\n\r]+/).forEach(line => {
-        if (line.trim()) {
-          const li = document.createElement('li');
-          li.textContent = line.replace(/^[-•*]\s*/, '');
-          container.appendChild(li);
-        }
-      });
-    }
-
-    async function loadData() {
-      if (!property) {
-        document.body.innerHTML = "<h2 style='color:red'>Missing '?property=' in the URL.</h2>";
-        return;
-      }
-
-      try {
-        const [guestRes, infoRes] = await Promise.all([
-          fetch(`data/${property}-guest.json`),
-          fetch(`data/${property}-info.json`)
-        ]);
-
-        const guest = await guestRes.json();
-        const info = await infoRes.json();
-
-        document.getElementById('property-name').textContent = info.property || property.replace('-', ' ').toUpperCase();
-        document.getElementById('guest-name').textContent = guest.name;
-        document.getElementById('checkin').textContent = guest.checkin;
-        document.getElementById('checkout').textContent = guest.checkout;
-        document.getElementById('nights').textContent = guest.nights;
-
-        formatToList('instructions', info.instructions);
-        formatToList('while-there', info.whileThere);
-        formatToList('departure', info.departure);
-
-      } catch (err) {
-        document.body.innerHTML = "<h2 style='color:red'>Failed to load guest info. Check file paths or property name.</h2>";
-        console.error(err);
-      }
-    }
-
-    loadData();
-  </script>
+  <header>
+    <h1>Welcome to ESVRM</h1>
+  </header>
+  <main>
+    <p>Your personalized guest experience starts here.</p>
+    <button class="btn">Explore Rentals</button>
+  </main>
+  <footer>
+    &copy; 2025 Empty Spaces Vacation Rental Management
+  </footer>
 </body>
 </html>
