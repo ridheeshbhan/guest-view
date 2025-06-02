@@ -1,0 +1,33 @@
+name: Update Guest JSONs
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'  # every 3 hours
+  workflow_dispatch:       # also allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install pandas requests icalendar python-dateutil
+
+      - name: Run script to update guest JSONs
+        run: python scripts/generate_guest_json.py
+
+      - name: Commit and push updated JSON files
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add data/*.json
+          git commit -m "Auto-update guest JSONs" || echo "No changes to commit"
+          git push
