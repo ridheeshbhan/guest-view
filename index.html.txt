@@ -85,7 +85,7 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const property = params.get('property')?.toLowerCase().replace(/\s+/g, '-');
+    const property = params.get('property'); console.log("Property param:", property);  if (property) {   const normalized = property.toLowerCase().replace(/\s+/g, '-');   console.log("Normalized property:", normalized); }
 
     function formatToList(id, text) {
       const el = document.getElementById(id);
