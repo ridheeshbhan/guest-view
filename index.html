@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guest View</title>
   <style>
     body {
@@ -10,79 +10,95 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #ffffff;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 0;
+    }
+    .slideshow {
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+    .slideshow img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slideshow img.active {
+      opacity: 1;
+      position: relative;
+    }
+    .container {
       padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
     h1 {
+      text-align: center;
       color: #006E8A;
       margin-bottom: 20px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 1000px;
-      width: 100%;
-    }
-    .box {
-      background: #f5f5f5;
+    .section {
+      background: #f9f9f9;
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
     h2 {
       font-size: 1.1rem;
-      color: #444;
       margin-bottom: 10px;
+      color: #444;
     }
     ul {
       padding-left: 20px;
     }
     li {
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
-    .error {
-      color: red;
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .info-row span {
       font-weight: bold;
-      margin-top: 30px;
-    }
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 <body>
-  <h1 id="property-name">Guest View</h1>
+  <div class="slideshow" id="slideshow"></div>
+  <div class="container">
+    <h1 id="property-name">Loading...</h1>
 
-  <div class="grid" id="content" style="display: none;">
-    <div class="box">
-      <h2>Guest Details</h2>
-      <ul>
-        <li><strong>Name:</strong> <span id="guest-name"></span></li>
-        <li><strong>Check-in:</strong> <span id="checkin"></span></li>
-        <li><strong>Check-out:</strong> <span id="checkout"></span></li>
-        <li><strong>Nights:</strong> <span id="nights"></span></li>
-      </ul>
+    <div class="section">
+      <div class="info-row"><span>Guest Name:</span> <span id="guest-name"></span></div>
+      <div class="info-row"><span>Check-in:</span> <span id="checkin"></span></div>
+      <div class="info-row"><span>Check-out:</span> <span id="checkout"></span></div>
+      <div class="info-row"><span>Nights:</span> <span id="nights"></span></div>
+      <div class="info-row"><span>Wi-Fi Network:</span> <span id="wifi-network"></span></div>
+      <div class="info-row"><span>Wi-Fi Password:</span> <span id="wifi-password"></span></div>
     </div>
-    <div class="box">
+
+    <div class="section">
       <h2>Home Instructions</h2>
       <ul id="instructions"></ul>
     </div>
-    <div class="box">
-      <h2>While You Are There</h2>
+    <div class="section">
+      <h2>While You're There</h2>
       <ul id="while-there"></ul>
     </div>
-    <div class="box">
+    <div class="section">
       <h2>Upon Departure</h2>
       <ul id="departure"></ul>
     </div>
+    <div class="section">
+      <h2>Important Things To Know</h2>
+      <ul id="important"></ul>
+    </div>
   </div>
-
-  <div class="error" id="error-message"></div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
@@ -91,32 +107,21 @@
     function formatToList(id, text) {
       const el = document.getElementById(id);
       el.innerHTML = '';
-      if (!text) return;
-      text.split(/\r?\n/).forEach(line => {
+      text.split(/[\n\r]+/).forEach(line => {
         if (line.trim()) {
           const li = document.createElement('li');
-          li.textContent = line.trim().replace(/^[-•*]\s*/, '');
+          li.textContent = line.trim().replace(/^[-\u2022*]\s*/, '');
           el.appendChild(li);
         }
       });
     }
 
     async function loadData() {
-      if (!property) {
-        document.getElementById('error-message').textContent = 'No property specified in the URL.';
-        return;
-      }
-
-      console.log('Loading data for property:', property);
-
       try {
         const [guestRes, infoRes] = await Promise.all([
           fetch(`data/${property}-guest.json?_=${Date.now()}`),
           fetch(`data/${property}-info.json?_=${Date.now()}`)
         ]);
-
-        if (!guestRes.ok) throw new Error(`Guest data not found: ${guestRes.status}`);
-        if (!infoRes.ok) throw new Error(`Info data not found: ${infoRes.status}`);
 
         const guest = await guestRes.json();
         const info = await infoRes.json();
@@ -126,16 +131,33 @@
         document.getElementById('checkin').textContent = guest.checkin || '';
         document.getElementById('checkout').textContent = guest.checkout || '';
         document.getElementById('nights').textContent = guest.nights || '';
+        document.getElementById('wifi-network').textContent = info.wifiNetwork || 'N/A';
+        document.getElementById('wifi-password').textContent = info.wifiPassword || 'N/A';
 
-        formatToList('instructions', info.instructions);
-        formatToList('while-there', info.whileThere);
-        formatToList('departure', info.departure);
+        formatToList('instructions', info.instructions || '');
+        formatToList('while-there', info.whileThere || '');
+        formatToList('departure', info.departure || '');
+        formatToList('important', info.important || '');
 
-        document.getElementById('content').style.display = 'grid';
+        if (info.photos && Array.isArray(info.photos)) {
+          const slideshow = document.getElementById('slideshow');
+          info.photos.forEach((src, idx) => {
+            const img = document.createElement('img');
+            img.src = src;
+            if (idx === 0) img.classList.add('active');
+            slideshow.appendChild(img);
+          });
+
+          let current = 0;
+          setInterval(() => {
+            const slides = document.querySelectorAll('#slideshow img');
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+          }, 10000);
+        }
       } catch (err) {
-        console.error('Error loading data:', err);
-        document.getElementById('error-message').textContent =
-          'Error loading data. Please check the property name or try again later.';
+        document.body.innerHTML = '<p style="color: red; text-align: center; padding: 20px;">Error loading data. Please check the property name or network connection.</p>';
       }
     }
 
