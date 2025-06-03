@@ -1,9 +1,13 @@
 {
   "property": "Shoshone",
+  "wifi": {
+    "network": "www.esvrm.com : Goodtimes",
+    "password": "Goodtimes"
+  },
+  "checkin_time": "16:00",
+  "checkout_time": "10:00",
   "instructions": "*Trash pick up is early Monday morning. *The WIFI is www.esvrm.com : Goodtimes *Any outdoor activity must cease from 10 pm to 7 am (this is a LHC ordinance, as well as a common courtesy to the neighbors). *Tuesday is pool service, Thursday is spa service. *Please follow pool and spa posted rules, this will ensure your group will stay safe and the pool and spa water will stay clean. *Any time children under 16 are in the rear yard they must be accompanied by an adult. *The pool and spa do NOT have a lifeguard on duty. *Glass containers are NOT allowed in the pool and spa area.",
   "whileThere": "",
-  "departure": "*Clean all dishes and put them away. Feel free to load the dishwasher with dirty dishes, but make sure to start the cycle before you leave. *You may leave your linens and towels where they are; *Housekeeping will take care of laundry. *Do not leave wet towels or linens in the washing machine *Leave the garage remote on the kitchen counter. *Turn off all lights, electronic equipment, and lock all the doors and windows. *Report any damages or problems to management upon departure.",
-  "importantInfo": "",
-  "checkin_time": "16:00",
-  "checkout_time": "10:00"
+  "departure": "*Clean all dishes and put them away.\nFeel free to load the dishwasher with dirty dishes, but make sure to start the cycle before you leave.\n*You may leave your linens and towels where they are; *Housekeeping will take care of laundry.\n*Do not leave wet towels or linens in the washing machine *Leave the garage remote on the kitchen counter.\n*Turn off all lights, electronic equipment, and lock all the doors and windows.\n*Report any damages or problems to management upon departure.",
+  "important": ""
 }

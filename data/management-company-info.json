@@ -1,9 +1,13 @@
 {
   "property": "Management Company",
+  "wifi": {
+    "network": NaN,
+    "password": NaN
+  },
+  "checkin_time": NaN,
+  "checkout_time": NaN,
   "instructions": NaN,
   "whileThere": "",
-  "departure": NaN,
-  "importantInfo": "",
-  "checkin_time": NaN,
-  "checkout_time": NaN
+  "departure": "",
+  "important": ""
 }

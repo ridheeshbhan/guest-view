@@ -1,9 +1,13 @@
 {
   "property": "Entrada at Moab 664",
+  "wifi": {
+    "network": "664 esvrm.com : goodtimes",
+    "password": "goodtimes"
+  },
+  "checkin_time": "15:00",
+  "checkout_time": "10:00",
   "instructions": "* CHECK-IN : 3 pm * CHECK-OUT : 10 am * POOL GATE CODE : 234",
   "whileThere": "",
-  "departure": "1. If there are any items in need of maintenance or our attention, please let management know. 2. Please make sure all dishes are cleaned and/or dishwasher loaded and the cycle started. 3. We love providing all the essentials, but please only the welcome items are to go home with you. 4. You may leave your linens and towels where they are; housekeeping will take care of laundry. 5. Remove all food and collect your personal belongings. 6. Dispose of all trash and recycling in the collection area on the west side of the Entradas on 650 West. 7. Return all television remotes back to where you found them. 8. Return the garage remote to the kitchen counter. 9. Turn off all lights and electronic equipment and lock all the doors and windows.",
-  "importantInfo": "",
-  "checkin_time": "15:00",
-  "checkout_time": "10:00"
+  "departure": "1.\nIf there are any items in need of maintenance or our attention, please let management know.\n2.\nPlease make sure all dishes are cleaned and/or dishwasher loaded and the cycle started.\n3.\nWe love providing all the essentials, but please only the welcome items are to go home with you.\n4.\nYou may leave your linens and towels where they are; housekeeping will take care of laundry.\n5.\nRemove all food and collect your personal belongings.\n6.\nDispose of all trash and recycling in the collection area on the west side of the Entradas on 650 West.\n7.\nReturn all television remotes back to where you found them.\n8.\nReturn the garage remote to the kitchen counter.\n9.\nTurn off all lights and electronic equipment and lock all the doors and windows.",
+  "important": ""
 }

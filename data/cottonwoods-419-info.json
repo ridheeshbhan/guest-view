@@ -1,9 +1,13 @@
 {
   "property": "Cottonwoods 419",
+  "wifi": {
+    "network": "419 esvrm.com > goodtimes",
+    "password": NaN
+  },
+  "checkin_time": "16:00",
+  "checkout_time": "11:00",
   "instructions": "\u2022 CHECK-IN: 4 pm \u2022 CHECK-OUT: 11 am \u2022 TRASH DAY - Early Thursday morning \u2022 POOL DOOR CODE: 234 LIVING and PRIMARY BEDROOM ROOMS TV INSTRUCTIONS Cable TV: 1 Press the power button on either remote. 2 The top right corner button is the input selector. Choose HDMI 1 for cable television. Streaming: 1 Using the LG remote, press the home button. 2 Select your favorite streaming service. SPA USAGE 1 Unlock the padlock with code 1357. 2 Gently fold back one half of the cover. Use the arm to lift back the cover. 3 Press JETS to turn on the jets. 4 Press LIGHTS to turn on the lights. 5 To adjust the temperature, press OPTIONS. Press the top gray selection button on the left side of the screen for the Temperature. Use gray selection buttons on the right side of the screen to adjust the temperature. FIREPLACE: You are welcome to use the gas fireplace. Please switch on both the fireplace and fireplace fan. There will be a small delay before the fire ignites, once you switch the fireplace on. If you experience any issues, big or small, during your stay, please call, text, or email any one of our team members so we may resolve them as quickly as possible. Let us know if there's anything we can do for you during your stay. Empty Spaces, Vacation Rental Management 801.657.5828 reservations@esvrm.com www.esvrm.com",
   "whileThere": "",
-  "departure": "1 If there are any items in need of maintenance or attention, please let management know. 2 Please make sure all dishes are cleaned and/or dishwasher loaded and the cycle started. 3 We love providing all the essentials, but please only the welcome items are to go home with you. 4 You may leave your linens and towels where they are; housekeeping will take care of laundry. 5 Remove all food and collect your personal belongings. 6 Return all television remotes back to where you found them. 7 Return the garage remote to the kitchen counter. 8 Turn off all lights and lock all the windows and doors.",
-  "importantInfo": "",
-  "checkin_time": "16:00",
-  "checkout_time": "11:00"
+  "departure": "1 If there are any items in need of maintenance or attention, please let management know.\n2 Please make sure all dishes are cleaned and/or dishwasher loaded and the cycle started.\n3 We love providing all the essentials, but please only the welcome items are to go home with you.\n4 You may leave your linens and towels where they are; housekeeping will take care of laundry.\n5 Remove all food and collect your personal belongings.\n6 Return all television remotes back to where you found them.\n7 Return the garage remote to the kitchen counter.\n8 Turn off all lights and lock all the windows and doors.",
+  "important": ""
 }

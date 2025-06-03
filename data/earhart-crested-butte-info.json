@@ -1,9 +1,13 @@
 {
   "property": "Earhart Crested Butte",
+  "wifi": {
+    "network": "whetstone : lostcreek",
+    "password": "lostcreek"
+  },
+  "checkin_time": "16:00",
+  "checkout_time": "10:00",
   "instructions": "- Trash pick up is early Tuesdays - Any outdoor activity must cease from 10 pm to 7 am (including idling MX, ATV, UTVs, etc.); this is a Gunnison County ordinance, as well as common courtesy for your neighbors. - The hot tub hours are from 9 am to 10 pm. - Any time children under 16 are in the rear yard and deck area they must be accompanied by an adult. - The hot tub does NOT have a lifeguard on duty. - From November to March, 4-wheel or all-wheel drive with all-season tires is recommended. - All vehicles, trailers, motorcycles, RVs, off-road vehicles shall be kept IN THE DRIVEWAY and NOT left on the roads or in the cul-de-sac at any time. The HOA will fine you if you park on the streets.",
   "whileThere": "",
-  "departure": "- Please make sure all dishes are cleaned and/or dishwasher loaded and the cycle started. - Do not leave towels or linens in the washing machine. - Remove all food and personal items and dispose of all trash in toters or bins in the garage. - Leave the garage remote on the kitchen counter and replace the key in the lockbox. - Turn off all lights, electronic equipment, and lock all the doors and windows. - Report any damages or problems to management upon departure.",
-  "importantInfo": "",
-  "checkin_time": "16:00",
-  "checkout_time": "10:00"
+  "departure": "- Please make sure all dishes are cleaned and/or dishwasher loaded and the cycle started.\n- Do not leave towels or linens in the washing machine.\n- Remove all food and personal items and dispose of all trash in toters or bins in the garage.\n- Leave the garage remote on the kitchen counter and replace the key in the lockbox.\n- Turn off all lights, electronic equipment, and lock all the doors and windows.\n- Report any damages or problems to management upon departure.",
+  "important": ""
 }

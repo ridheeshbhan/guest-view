@@ -1,9 +1,13 @@
 {
   "property": "Tanglewood",
+  "wifi": {
+    "network": "GAECABIN > (no password required)",
+    "password": NaN
+  },
+  "checkin_time": "15:00",
+  "checkout_time": "11:00",
   "instructions": NaN,
   "whileThere": "",
-  "departure": "1. Wash, dry, and put away all dishes. Do not leave dishes in dishwasher. 2. No need to strip beds, housekeeping will take care of laundry. 3. Do not leave wet towels or linens in the washing machine. 4. Remove all food and personal items. 5. Dispose of all trash in dumpsters by the gate. 6. Turn off all interior lights, TV\u02bcs, stereo equipment, etc. 7. Lock all windows and doors. 8. Replace key in lockbox.",
-  "importantInfo": "",
-  "checkin_time": "15:00",
-  "checkout_time": "11:00"
+  "departure": "1.\nWash, dry, and put away all dishes.\nDo not leave dishes in dishwasher.\n2.\nNo need to strip beds, housekeeping will take care of laundry.\n3.\nDo not leave wet towels or linens in the washing machine.\n4.\nRemove all food and personal items.\n5.\nDispose of all trash in dumpsters by the gate.\n6.\nTurn off all interior lights, TV\u02bcs, stereo equipment, etc.\n7.\nLock all windows and doors.\n8.\nReplace key in lockbox.",
+  "important": ""
 }
