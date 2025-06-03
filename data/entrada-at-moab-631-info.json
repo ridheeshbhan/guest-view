@@ -1,6 +1,9 @@
 {
   "property": "Entrada at Moab 631",
-  "instructions": "- Wi-Fi: Network is provided upon check-in\n- Thermostat is pre-set but can be adjusted",
-  "whileThere": "- Respect quiet hours after 10pm\n- Park only in designated spaces",
-  "departure": "- Check out by 10:00am\n- Run dishwasher\n- Take out trash to bins outside"
+  "instructions": "* CHECK-IN : 4 pm * CHECK-OUT : 11 am * POOL GATE CODE : 234",
+  "whileThere": "",
+  "departure": "1. If there are any items in need of maintenance or our attention, please let management know. 2. Please make sure all dishes are cleaned and/or dishwasher loaded and the cycle started. 3. We love providing all the essentials, but please only the welcome items are to go home with you. 4. You may leave your linens and towels where they are; housekeeping will take care of laundry. 5. Remove all food and collect your personal belongings. 6. Dispose of all trash and recycling in the collection area on the west side of the Entradas on 650 West. 7. Return all television remotes back to where you found them. 8. Return the garage remote to the kitchen counter. 9. Turn off all lights and electronic equipment and lock all the doors and windows.",
+  "importantInfo": "",
+  "checkin_time": "16:00",
+  "checkout_time": "11:00"
 }

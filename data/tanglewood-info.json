@@ -1,6 +1,9 @@
 {
   "property": "Tanglewood",
-  "instructions": "- Wi-Fi: Network is provided upon check-in\n- Thermostat is pre-set but can be adjusted",
-  "whileThere": "- Respect quiet hours after 10pm\n- Park only in designated spaces",
-  "departure": "- Check out by 10:00am\n- Run dishwasher\n- Take out trash to bins outside"
+  "instructions": NaN,
+  "whileThere": "",
+  "departure": "1. Wash, dry, and put away all dishes. Do not leave dishes in dishwasher. 2. No need to strip beds, housekeeping will take care of laundry. 3. Do not leave wet towels or linens in the washing machine. 4. Remove all food and personal items. 5. Dispose of all trash in dumpsters by the gate. 6. Turn off all interior lights, TV\u02bcs, stereo equipment, etc. 7. Lock all windows and doors. 8. Replace key in lockbox.",
+  "importantInfo": "",
+  "checkin_time": "15:00",
+  "checkout_time": "11:00"
 }

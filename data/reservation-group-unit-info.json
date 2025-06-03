@@ -1,6 +1,9 @@
 {
   "property": "Reservation Group Unit",
-  "instructions": "- Wi-Fi: Network is provided upon check-in\n- Thermostat is pre-set but can be adjusted",
-  "whileThere": "- Respect quiet hours after 10pm\n- Park only in designated spaces",
-  "departure": "- Check out by 10:00am\n- Run dishwasher\n- Take out trash to bins outside"
+  "instructions": NaN,
+  "whileThere": "",
+  "departure": NaN,
+  "importantInfo": "",
+  "checkin_time": NaN,
+  "checkout_time": NaN
 }
